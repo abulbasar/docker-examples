@@ -1,0 +1,15 @@
+version: "3"
+services:
+  web-service:
+    build: ./web-service
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./web-service:/app"
+    depends_on:
+      - db-service
+
+  db-service:
+    build: ./db-service
+    volumes:
+      - "/data:/var/lib/cassandra/data"
