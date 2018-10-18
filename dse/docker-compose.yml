@@ -1,0 +1,11 @@
+version: "3"
+services:
+  cassandra:
+    build: .
+    hostname: "node1"
+    ports:
+      - "7199:7199"
+      - "9042:9042"
+      - "8983:8983"
+    volumes:
+      - /docker-pv/dse-node1:/pv/
